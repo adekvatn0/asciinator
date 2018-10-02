@@ -16,7 +16,6 @@ private val RENDERING_PROPS = HashMap<RenderingHints.Key, Any>()
 object Asciinator {
 
     init {
-        RENDERING_PROPS[RenderingHints.KEY_TEXT_ANTIALIASING] = RenderingHints.VALUE_TEXT_ANTIALIAS_ON
         RENDERING_PROPS[RenderingHints.KEY_STROKE_CONTROL] = RenderingHints.VALUE_STROKE_PURE
         RENDERING_PROPS[RenderingHints.KEY_FRACTIONALMETRICS] = RenderingHints.VALUE_FRACTIONALMETRICS_ON
     }
