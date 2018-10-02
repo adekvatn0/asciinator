@@ -84,7 +84,7 @@ object Asciinator {
         graphics2D.font = font
 
         for ((index, line) in lines.withIndex()) {
-            graphics2D.drawString(line, 0f, lineMetrics.ascent * index)
+            graphics2D.drawString(line, 0f, lineMetrics.height * index)
         }
 
         graphics2D.dispose()
