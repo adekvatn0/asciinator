@@ -75,7 +75,7 @@ object Asciinator {
         val img = BufferedImage(
                 Math.ceil(lineRect.width).toInt(),
                 Math.ceil(lineRect.height * lines.size).toInt(),
-                BufferedImage.TYPE_INT_ARGB)
+                BufferedImage.TYPE_INT_RGB)
         val graphics2D = img.createGraphics()
         graphics2D.setRenderingHints(RENDERING_PROPS)
         graphics2D.background = backgroundColor
@@ -89,7 +89,7 @@ object Asciinator {
 
         graphics2D.dispose()
 
-        ImageIO.write(img, "jpg", outputFile)
+        ImageIO.write(img, outputFile.extension, outputFile)
 
         return outputFile
     }
