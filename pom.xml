@@ -3,14 +3,37 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <version>1.0</version>
-    <packaging>jar</packaging>
 
     <name>Asciinator</name>
     <description>Library to convert images to ASCII-style images</description>
+    <url>https://github.com/ambershogun/asciinator</url>
 
     <groupId>io.github.ambershogun</groupId>
     <artifactId>asciinator</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/ambershogun/asciinator</url>
+        <connection>https://github.com/ambershogun/asciinator.git</connection>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>owner</id>
+            <name>Mikhail Fedotov</name>
+            <email>mikhail.fedotov90@gmail.com</email>
+            <timezone>UTC+4</timezone>
+        </developer>
+    </developers>
 
     <properties>
         <kotlin.version>1.2.61</kotlin.version>
