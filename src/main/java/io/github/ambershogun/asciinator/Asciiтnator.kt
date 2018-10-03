@@ -1,4 +1,4 @@
-package ru.redshogun.ascii
+package io.github.ambershogun.asciinator
 
 import java.awt.Color
 import java.awt.Font
@@ -10,7 +10,7 @@ import java.util.*
 import javax.imageio.ImageIO
 
 private const val RAMP = " .`^,:;i!lI><~+_-?[{1)(|/vczXYUJCLOQ0Zhao*#MW&8%B@\$"
-private const val FONT_SIZE_RATIO = 2;
+private const val FONT_SIZE_RATIO = 2
 private val RENDERING_PROPS = HashMap<RenderingHints.Key, Any>()
 
 /**
