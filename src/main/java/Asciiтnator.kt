@@ -13,6 +13,9 @@ private const val RAMP = " .`^,:;i!lI><~+_-?[{1)(|/vczXYUJCLOQ0Zhao*#MW&8%B@\$"
 private const val FONT_SIZE_RATIO = 2;
 private val RENDERING_PROPS = HashMap<RenderingHints.Key, Any>()
 
+/**
+ * Converts provided image to ASCII style image
+ */
 object Asciinator {
 
     init {
@@ -20,6 +23,15 @@ object Asciinator {
         RENDERING_PROPS[RenderingHints.KEY_FRACTIONALMETRICS] = RenderingHints.VALUE_FRACTIONALMETRICS_ON
     }
 
+    /**
+     * Converts provided image to ASCII style image
+     *
+     * @param inputFile source image to convert
+     * @param width width of converted image in pixels
+     * @param bgndColor color of converted image background
+     * @param fontColor color of converted image font
+     * @param outputFile result file
+     */
     @JvmStatic
     fun asciinate(
             inputFile: File,
@@ -32,6 +44,14 @@ object Asciinator {
         return textToImage(asciiString, bgndColor, fontColor, outputFile)
     }
 
+    /**
+     * Resize and convert provided image to String with ASCII content
+     *
+     * @param file source image to convert
+     * @param widthPixels width of converted image in pixels
+     *
+     * @return string with ASCII content
+     */
     private fun makeAsciiString(file: File, widthPixels: Int): String {
         val inputImage = ImageIO.read(file)
         val heightPixels = (widthPixels / (inputImage.width.toDouble() / inputImage.height.toDouble())).toInt() / FONT_SIZE_RATIO
@@ -55,6 +75,13 @@ object Asciinator {
         return result.toString()
     }
 
+    /**
+     * Calculates average saturation of color
+     *
+     * @param rgb color as integer
+     *
+     * @return average saturation in range from 0 to 255
+     */
     private fun average(rgb: Int): Int {
         val red = rgb shr 16 and 0xff
         val green = rgb shr 8 and 0xff
@@ -63,6 +90,14 @@ object Asciinator {
         return (Math.sqrt(red.toDouble()) + Math.sqrt(green.toDouble()) + Math.sqrt(blue.toDouble())).toInt()
     }
 
+    /**
+     * Converts provided String to image file
+     *
+     * @param text string with ASCII content
+     * @param backgroundColor color of converted image background
+     * @param fontColor color of converted image font
+     * @param outputFile result file
+     */
     private fun textToImage(text: String, backgroundColor: Color, fontColor: Color, outputFile: File): File {
         val font = Font.decode(Font.MONOSPACED)
 
